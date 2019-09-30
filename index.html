@@ -1,7 +1,47 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8" />
+	<title>Project MoreMusicBot</title>
+	<style type="text/css">
+	body {
+		-moz-user-select : none;
+		-webkit-user-select: none;
+	}
+</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+	<script type="text/javascript">
+			//<!--
+			function iEsc() { return false; }
+			function iRec() { return true; }
+			function DisableKeys() {
+				if (event.ctrlKey || event.shiftKey || event.altKey) {
+					window.event.returnValue = false;
+					iEsc();
+				}
+			}
+			document.ondragstart = iEsc;
+			document.onkeydown = DisableKeys;
+			document.oncontextmenu = iEsc;
+			if (typeof document.onselectstart != "undefined")
+				document.onselectstart = iEsc;
+			else {
+				document.onmousedown = iEsc;
+				document.onmouseup = iRec;
+			}
+			function DisableRightClick(qsyzDOTnet) {
+				if (window.Event) {
+					if (qsyzDOTnet.which == 2 || qsyzDOTnet.which == 3)
+						iEsc();
+				} else if (event.button == 2 || event.button == 3) {
+					event.cancelBubble = true
+					event.returnValue = false;
+					iEsc();
+				}
+			}
+	//-->
+	</script>
 </body>
 </html>
